@@ -10,7 +10,7 @@ tags: ["FFT"]
 build: [
   ["dune" "subst"] {pinned}
   ["dune" "build" "-p" name "-j" jobs] {os != "macos"}
-  ["env" "FFTW3_CFLAGS=-I /usr/local/include -L /usr/local/lib -I /usr/local/include -L /usr/local/lib"
+  ["env" "FFTW3_CFLAGS=-I /opt/homebrew/include -I /usr/local/include -L /usr/local/lib -I /usr/local/include -L /usr/local/lib"
    "dune" "build" "-p" name "-j" jobs
   ] {os = "macos"}
   ["dune" "runtest" "-p" name "-j" jobs] {with-test}
